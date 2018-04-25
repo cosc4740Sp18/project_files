@@ -220,13 +220,13 @@ int main()
   cout << "rv from closeFile /a fs3 is " << r << (r==0 ? " correct":" fail")<<endl;
 
   l1 = c2->myFS->lockFile(const_cast<char *>("/a"), 2);
-  cout << "rv from lockFile /a fs2 is " << l2 << (l1>0 ? " correct": " failure") <<endl;
+  cout << "rv from lockFile /a fs2 is " << l1 << (l1>0 ? " correct": " failure") <<endl;
   l2 = c3->myFS->lockFile(const_cast<char *>("/a"), 2);
-  cout << "rv from lockFile /a fs3 is " << l2 << (l1>0 ? " correct": " failure") <<endl;
+  cout << "rv from lockFile /a fs3 is " << l2 << (l2>0 ? " correct": " failure") <<endl;
   r = c2->myFS->unlockFile( const_cast<char *>("/a"),2,l1);
   cout << "rv from unlockFile /a fs2 is " << r << (r==0 ? " correct ": " failure") <<endl;
   l1 = c3->myFS->lockFile(const_cast<char *>("/b"), 2);
-  cout << "rv from lockFile /b fs3 is " << l2 << (l1==-3 ? " correct": " failure") <<endl;
+  cout << "rv from lockFile /b fs3 is " << l1 << (l1==-3 ? " correct": " failure") <<endl;
   r = c3->myFS->unlockFile( const_cast<char *>("/a"),2,l2);
   cout << "rv from unlockFile /a fs3 is " << r << (r==0 ? " correct ": " failure") <<endl;
   r = c3->myFS->closeFile(f4);
