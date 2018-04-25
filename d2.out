@@ -88,10 +88,10 @@ locks on 3 partitions
 rv from closeFile /a fs1 is 0 correct
 rv from closeFile /a fs2 is 0 correct
 rv from closeFile /a fs3 is 0 correct
-rv from lockFile /a fs2 is 2 correct
+rv from lockFile /a fs2 is 1 correct
 rv from lockFile /a fs3 is 1 correct
 rv from unlockFile /a fs2 is 0 correct 
-rv from lockFile /b fs3 is 1 correct
+rv from lockFile /b fs3 is -3 correct
 rv from unlockFile /a fs3 is 0 correct 
 rv from closeFile /b fs3 is 0 correct
 
